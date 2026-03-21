@@ -77,6 +77,7 @@ Tested against ~50,000 simulated log events with intentional noise: mixed timest
   Top IPs: [('192.168.1.130', 203), ('25.36.46.112', 141), ('44.206.45.184', 136)]
  
 ```
+> The low deduplication ratio (0.06%) reflects the nature of the generated test data — each user/IP pair tends to produce distinct alert events rather than burst duplicates. The deduplication window is most effective in real scenarios where the same source triggers the same rule repeatedly within a short timeframe, such as sustained brute-force from a single IP.
 
 Incident reports are output as structured JSON with timeline and observables:
 
