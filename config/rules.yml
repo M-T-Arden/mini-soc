@@ -1,0 +1,21 @@
+rules:
+  - id: brute_force
+    enabled: true
+    weight: 80
+    threshold: 5
+    window_seconds: 300
+    mitre: ["T1110"]
+  - id: off_hours
+    enabled: true
+    weight: 50
+    off_hours: [22, 23, 0, 1, 2, 3, 4, 5]
+    whitelist: ["service_account", "admin", "system"]
+  - id: ip_anomaly
+    enabled: true
+    weight: 60
+    mitre: ["T1071.001"]
+  - id: mfa_suspicious
+    enabled: true
+    weight: 55
+    mfa_threshold: 3
+    suspicious_ua: ["curl", "wget", "python-requests"]
