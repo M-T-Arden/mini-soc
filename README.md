@@ -53,31 +53,30 @@ Tested against ~50,000 simulated log events with intentional noise: mixed timest
 === ALERT METRICS REPORT ===
 
 📊 Summary:
-  Raw Alerts: 20333
-  Deduped Alerts: 20320
-  Deduplication Ratio: 0.9994
-  Noise Reduction: 0.06%
+  Raw Alerts: 67171
+  Deduped Alerts: 51054
+  Deduplication Ratio: 0.7601
+  Noise Reduction: 23.99%
 
 🔥 Severity Distribution:
-  Raw: {'MEDIUM': 7479, 'HIGH': 12854}
-  Deduped: {'MEDIUM': 7469, 'HIGH': 12851}
+  Raw: {'CRITICAL': 7502, 'MEDIUM': 26211, 'HIGH': 33458}
+  Deduped: {'CRITICAL': 1571, 'MEDIUM': 16811, 'HIGH': 32672}
 
 📋 Rule Distribution:
-  Raw: {'off_hours': 4383, 'ip_anomaly': 12854, 'mfa_suspicious': 3096}
-  Deduped: {'off_hours': 4382, 'ip_anomaly': 12851, 'mfa_suspicious': 3087}
+  Raw: {'brute_force': 7502, 'off_hours': 15103, 'ip_anomaly': 33458, 'mfa_suspicious': 11108}
+  Deduped: {'brute_force': 1571, 'off_hours': 14361, 'ip_anomaly': 32672, 'mfa_suspicious': 2450}
 
 ⏰ Temporal Analysis:
-  Time Span: 479.9 hours
+  Time Span: 480.0 hours
   Peak Hour: 1:00
 
 👥 User/IP Analysis:
-  Unique Users: 100
-  Unique IPs: 199
-  Top Users: [('user34', 237), ('user80', 236), ('user96', 234)]
-  Top IPs: [('192.168.1.130', 203), ('25.36.46.112', 141), ('44.206.45.184', 136)]
- 
+  Unique Users: 80
+  Unique IPs: 42
+  Top Users: [('user3', 2573), ('user7', 2542), ('user5', 2491)]
+  Top IPs: [('198.51.100.178', 5296), ('203.0.113.88', 5149), ('104.244.42.129', 4929)]
 ```
-> The low deduplication ratio (0.06%) reflects the nature of the generated test data — each user/IP pair tends to produce distinct alert events rather than burst duplicates. The deduplication window is most effective in real scenarios where the same source triggers the same rule repeatedly within a short timeframe, such as sustained brute-force from a single IP.
+
 
 Incident reports are output as structured JSON with timeline and observables:
 
