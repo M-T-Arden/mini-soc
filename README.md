@@ -93,7 +93,7 @@ python main.py --input logs/sample_50k.json --metrics
 
 ## Quick Start
 
-1. 创建可执行环境并安装依赖（如有）
+1. 创建可执行环境并安装依赖
 
 ```bash
 pip install -r requirements.txt
