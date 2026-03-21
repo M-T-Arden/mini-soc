@@ -56,16 +56,10 @@ python main.py --input logs/sample_50k.json
 python main.py --input logs/sample_50k.json --metrics
 ```
 
-## Extension Suggestions
-
-- Add `event_context` scoring and asset risk correlation
-- Add `ip_whitelist`, `user_risk_profile` filtering
-- Support multi-format timestamp parsing (sec/ms/Z/timezone)
-- Export alerts to ELK/SIEM platforms
 
 ---
 
-## 中文版（Chinese Version）
+## mini soc 项目
 
 一个轻量级 SOC 规则检测引擎与样本数据生成项目，适用于演示和快速原型。
 
@@ -137,14 +131,5 @@ python main.py --input logs/sample_50k.json --metrics
 - `off_hours`, `whitelist`
 
 
-## 扩展建议
 
-- 增加 `event_context` 分值，关联资产风险评分
-- 增加 `ip_whitelist`, `user_risk_profile` 过滤
-- 支持多格式时间解析（兼容秒/毫秒/Z/带时区）
-- 将告警导出到 ELK / SIEM 平台
 
-## 联系
-
-该项目由个人快速实现，用于 SOC 规则逻辑验证与实验。
-欢迎反馈规则进一步优化或数据源对接等需求。
