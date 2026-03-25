@@ -10,10 +10,10 @@ Built to understand how SIEM detection logic works in practice, and to experimen
 
 | Rule | Logic | MITRE ATT&CK |
 |------|-------|--------------|
-| **Brute Force** | ≥5 failed logins per user/IP within a 300s sliding window | T1110 – Brute Force |
+| **Brute Force** | ≥5 failed logins per user or IP within a 300s sliding window | T1110 – Brute Force |
 | **Off-Hours Access** | Successful logins outside 22:00–06:00 (configurable, with whitelist) | T1078 – Valid Accounts |
 | **IP Anomaly** | User authenticates from a previously unseen IP | T1078 – Valid Accounts |
-| **MFA Suspicious** | ≥3 MFA failures + suspicious user-agent, scoped to failure events only | T1111 – MFA Interception |
+| **MFA Suspicious** | ≥3 MFA failures + suspicious user-agent, ≥5 MFA request within a 300s sliding window | T1111 – MFA Interception & T1621 - MFA Request Generation|
 
 ---
 
